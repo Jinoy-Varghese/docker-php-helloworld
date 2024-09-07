@@ -2,6 +2,8 @@
 
 echo "Hello, World from Docker! <br>";
 echo "Hello ECS! <br>";
-echo '<img src="https://www.docker.com/sites/default/files/horizontal.png">';
-
+for($i=1;$i<=5;$i++)
+{
+  echo $i."<br>";
+}
 ?>
