@@ -1,56 +1,128 @@
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <meta charset="utf-8" />
-       <!-- This is the minified production version of parse js -->
-       <script
-         type="text/javascript"
-         src="https://npmcdn.com/parse/dist/parse.min.js"
-       ></script>
-    </head>
-    <body>
-      <h1>JS SDK</h1>
-      <input id="username" type="text" placeholder="Username" />
-      <input id="email" type="email" placeholder="Email" />
-      <input id="password" type="password" placeholder="Password" />
-      <button id="createButton">Create User</button>
-    </body>
-    <script>
-      // Initialize Parse
-      Parse.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL
-// Remember to inform BOTH the Back4App Application ID AND the JavaScript KEY
-      Parse.initialize(
-        'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic', // This is your Application ID
-        'NDunEJ6qyg1AZ104lDqbC4969ItHhjXYoYXIwC1D' // This is your Javascript key
-      );
-  
-      // Create a new User
-      async function createParseUser() {
-        // Creates a new Parse "User" object, which is created by default in your Parse app
-        let user = new Parse.User();
-        // Set the input values to the new "User" object
-        user.set("username", document.getElementById("username").value);
-        user.set("email", document.getElementById("email").value);
-        user.set("password", document.getElementById("password").value);
-        try {
-          // Call the save method, which returns the saved object if successful
-          user = await user.save();
-          if (user !== null) {
-            // Notify the success by getting the attributes from the "User" object, by using the get method (the id attribute needs to be accessed directly, though)
-            alert(
-              `New object created with success! ObjectId: ${
-                user.id
-              }, ${user.get("username")}`
-            );
-          }
-        } catch (error) {
-                    alert(`Error: ${error.message}`);
-        }
-      }
-  
-      // Add on click listener to call the create parse user function
-      document.getElementById("createButton").addEventListener("click", async function () {
-        createParseUser();
-      });
-    </script>
-  </html>
+<?php
+require 'vendor/autoload.php';
+echo "Hello, World from Docker! <br>";
+echo "Hello ECS! <br>";
+for($i=1;$i<=5;$i++)
+{
+  echo $i."<br>";
+}
+
+
+
+
+
+// $curl = curl_init();
+//     curl_setopt($curl, CURLOPT_URL, 'https://parseapi.back4app.com/classes/City?limit=10');
+//     curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+//         'X-Parse-Application-Id: mxsebv4KoWIGkRntXwyzg6c6DhKWQuit8Ry9sHja', // This is the fake app's application id
+//         'X-Parse-Master-Key: TpO0j3lG2PmEVMXlKYQACoOXKQrL3lwM0HwR9dbH' // This is the fake app's readonly master key
+//     ));
+//     $data = json_decode(curl_exec($curl)); // Here you have the data that you need
+//     print_r(json_encode($data, JSON_PRETTY_PRINT));
+//     curl_close($curl);
+?>
+<script src="node_modules/parse/dist/parse.min.js"></script>
+
+<script>
+// Parse.serverURL = 'https://parseapi.back4app.com/classes/Indonesia_Cities_Database'; // This is your Server URL
+// // Remember to inform BOTH the Back4App Application ID AND the JavaScript KEY
+// Parse.initialize(
+//   'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic', // This is your Application ID
+//   'NDunEJ6qyg1AZ104lDqbC4969ItHhjXYoYXIwC1D' // This is your Javascript key
+// );
+//axios is not defined
+const axios = require('axios');
+
+
+async function addCustomClassName(){
+try{
+axios({
+method:'POST',
+url:'https://parseapi.back4app.com/classes/Indonesia_Cities_Database',
+headers:{
+"X-Parse-Application-Id": "qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic",
+"X-Parse-REST-API-Key": "ui9JtZVsSkNqQmHUz1IezQovwz7s2GcdyXIVRMSk",
+"Content-Type": "application/json"
+},
+data:{
+  "asciiname": "testing jino",
+  "longitude": 1,
+  "admin1_code": 1,
+  "name": "testing jino",
+  "population": 1,
+  "geonameid": 1,
+  "feature_class": "testing jino",
+  "timezone": "testing jino",
+  "feature_code": "testing jino",
+  "dem": 1,
+  "modification_date": "testing jino",
+  "alternatenames": "A string",
+  "latitude": 1,
+  "country_code": "A string",
+  "admin3_code": 1,
+  "cc2": "A string",
+  "elevation": 1
+}
+ }).then((res)=>{
+  console.log(res)
+ }).catch((err)=>{
+ console.log(err.request )
+ })
+}
+catch(error){
+console.log(error)}}
+addCustomClassName();
+
+</script>
+<?php
+
+use Parse\ParseException;
+// use Parse\ParseQuery;
+use Parse\ParseObject;
+use Parse\ParseClient;
+
+$app_id = 'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic';
+$RestAPIKey = 'ui9JtZVsSkNqQmHUz1IezQovwz7s2GcdyXIVRMSk';
+$master_key = 'zNdLgqeDsRPkxmBsAcke5jFAnDYoC6LYV6N8uJrk';
+
+ParseClient::initialize($app_id, $RestAPIKey, $master_key);
+
+//Set server url
+ParseClient::setServerURL('https://parseapi.back4app.com/classes/Indonesia_Cities_Database','/');
+$health = ParseClient::getServerHealth();
+if($health['status'] === 200) {
+    print('Server connected - everything looks good!');
+}
+else {
+    print('Oops, looks like something is wrong. Please check the server status.');
+    echo $health['status'];
+}
+$myCustomObject = new ParseObject("Indonesia_Cities_Database");
+
+$myCustomObject->set("asciiname", "jinjin");
+$myCustomObject->set("longitude", 1);
+$myCustomObject->set("admin1_code", 1);
+$myCustomObject->set("name", "A string");
+$myCustomObject->set("population", 1);
+$myCustomObject->set("geonameid", 1);
+$myCustomObject->set("feature_class", "A string");
+$myCustomObject->set("timezone", "A string");
+$myCustomObject->set("feature_code", "A string");
+$myCustomObject->set("dem", 1);
+$myCustomObject->set("modification_date", "A string");
+$myCustomObject->set("alternatenames", "A string");
+$myCustomObject->set("latitude", 1);
+$myCustomObject->set("country_code", "A string");
+$myCustomObject->set("admin3_code", 1);
+$myCustomObject->set("cc2", "A string");
+$myCustomObject->set("elevation", 1);
+
+try {
+  $myCustomObject->save();
+  echo 'New object created with objectId: ' . $myCustomObject->getObjectId();
+} catch (ParseException $ex) {
+  // Execute any logic that should take place if the save fails.
+  // error is a ParseException object with an error code and message.
+  echo 'Failed to create new object, with error message: ' . $ex->getMessage();
+}
+?>
