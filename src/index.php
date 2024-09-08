@@ -97,32 +97,33 @@ else {
     print('Oops, looks like something is wrong. Please check the server status.');
     echo $health['status'];
 }
-$myCustomObject = new ParseObject("Indonesia_Cities_Database");
-
-$myCustomObject->set("asciiname", "jinjin");
-$myCustomObject->set("longitude", 1);
-$myCustomObject->set("admin1_code", 1);
-$myCustomObject->set("name", "A string");
-$myCustomObject->set("population", 1);
-$myCustomObject->set("geonameid", 1);
-$myCustomObject->set("feature_class", "A string");
-$myCustomObject->set("timezone", "A string");
-$myCustomObject->set("feature_code", "A string");
-$myCustomObject->set("dem", 1);
-$myCustomObject->set("modification_date", "A string");
-$myCustomObject->set("alternatenames", "A string");
-$myCustomObject->set("latitude", 1);
-$myCustomObject->set("country_code", "A string");
-$myCustomObject->set("admin3_code", 1);
-$myCustomObject->set("cc2", "A string");
-$myCustomObject->set("elevation", 1);
-
+$query = new ParseQuery("Indonesia_Cities_Database");
 try {
-  $myCustomObject->save();
-  echo 'New object created with objectId: ' . $myCustomObject->getObjectId();
+  $myCustomObject = $query->get("<PARSE_OBJECT_ID>");
+  // The object was retrieved successfully.
+
+  // To get attributes, you can use the "get" method, providing the attribute name:
+  $asciiname = $myCustomObject->get("asciiname");
+  $longitude = $myCustomObject->get("longitude");
+  $admin1_code = $myCustomObject->get("admin1_code");
+  $name = $myCustomObject->get("name");
+  $population = $myCustomObject->get("population");
+  $geonameid = $myCustomObject->get("geonameid");
+  $feature_class = $myCustomObject->get("feature_class");
+  $timezone = $myCustomObject->get("timezone");
+  $feature_code = $myCustomObject->get("feature_code");
+  $dem = $myCustomObject->get("dem");
+  $modification_date = $myCustomObject->get("modification_date");
+  $alternatenames = $myCustomObject->get("alternatenames");
+  $latitude = $myCustomObject->get("latitude");
+  $country_code = $myCustomObject->get("country_code");
+  $admin3_code = $myCustomObject->get("admin3_code");
+  $cc2 = $myCustomObject->get("cc2");
+  $elevation = $myCustomObject->get("elevation");
 } catch (ParseException $ex) {
-  // Execute any logic that should take place if the save fails.
-  // error is a ParseException object with an error code and message.
-  echo 'Failed to create new object, with error message: ' . $ex->getMessage();
+  // The object was not retrieved successfully.
+  // error is a ParseException with an error code and message.
+  echo 'Failed to get object, with error message: ' . $ex->getMessage();
 }
+
 ?>
