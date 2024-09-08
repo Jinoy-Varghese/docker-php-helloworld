@@ -39,7 +39,7 @@ use Parse\ParseObject;
 use Parse\ParseClient;
 
 $app_id = 'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic';
-$master_key = 'zNdLgqeDsRPkxmBsAcke5jFAnDYoC6LYV6N8uJrk';
+$master_key = 'NDunEJ6qyg1AZ104lDqbC4969ItHhjXYoYXIwC1D';
 
 ParseClient::initialize($app_id, null, $master_key);
 
