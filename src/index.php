@@ -24,7 +24,7 @@ for($i=1;$i<=5;$i++)
 <script src="node_modules/parse/dist/parse.min.js"></script>
 
 <script>
-Parse.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL
+Parse.serverURL = 'https://parseapi.back4app.com/classes/Indonesia_Cities_Database'; // This is your Server URL
 // Remember to inform BOTH the Back4App Application ID AND the JavaScript KEY
 Parse.initialize(
   'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic', // This is your Application ID
