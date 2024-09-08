@@ -18,7 +18,6 @@ ParseClient::setServerURL('https://parseapi.back4app.com', '/');
 $myCustomObject = new ParseObject("testdb");
 
 $myCustomObject->set("name", "rishi");
-$myCustomObject->set("id", "11");
 $myCustomObject->set("nick", "ubcbcs");
 
 try {
