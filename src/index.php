@@ -10,6 +10,9 @@ require 'vendor/autoload.php';
 use Parse\ParseClient;
 use Parse\ParseException;
 use Parse\ParseObject;
+use Parse\ParseQuery;
+
+
 
 // Initializes with the <APPLICATION_ID>, <REST_KEY>, and <MASTER_KEY>
 ParseClient::initialize( "qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic", "ui9JtZVsSkNqQmHUz1IezQovwz7s2GcdyXIVRMSk", "zNdLgqeDsRPkxmBsAcke5jFAnDYoC6LYV6N8uJrk" );
