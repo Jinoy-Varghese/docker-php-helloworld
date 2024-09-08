@@ -26,17 +26,17 @@ for($i=1;$i<=5;$i++)
 <script>
 Parse.serverURL = 'https://parseapi.back4app.com/classes/Indonesia_Cities_Database'; // This is your Server URL
 // Remember to inform BOTH the Back4App Application ID AND the JavaScript KEY
-Parse.initialize(
-  'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic', // This is your Application ID
-  'NDunEJ6qyg1AZ104lDqbC4969ItHhjXYoYXIwC1D' // This is your Javascript key
-);
+
 </script>
 <?php
 
 use Parse\ParseException;
 use Parse\ParseQuery;
 use Parse\ParseObject;
-
+Parse.initialize(
+  'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic', // This is your Application ID
+  'NDunEJ6qyg1AZ104lDqbC4969ItHhjXYoYXIwC1D' // This is your Javascript key
+);
 $myCustomObject = new ParseObject("Indonesia_Cities_Database");
 
 $myCustomObject->set("asciiname", "jinjin");
