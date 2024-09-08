@@ -28,4 +28,18 @@ try {
   // error is a ParseException object with an error code and message.
   echo 'Failed to create new object, with error message: ' . $ex->getMessage();
 }
+
+
+$query = new ParseQuery("testdb");
+try {
+  $myCustomObject = $query->get("PIzYOpcW2j");
+  // The object was retrieved successfully.
+
+  // To get attributes, you can use the "get" method, providing the attribute name:
+  $myCustomKey1Value = $myCustomObject->get("name");
+  echo $myCustomKey1Value;
+} catch (ParseException $ex) {
+  // The object was not retrieved successfully.
+  // error is a ParseException with an error code and message.
+}
 ?>
