@@ -30,6 +30,8 @@ for($i=1;$i<=5;$i++)
 //   'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic', // This is your Application ID
 //   'NDunEJ6qyg1AZ104lDqbC4969ItHhjXYoYXIwC1D' // This is your Javascript key
 // );
+//axios is not defined
+const axios = require('axios');
 
 
 async function addCustomClassName(){
