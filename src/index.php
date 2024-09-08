@@ -38,7 +38,7 @@ use Parse\ParseQuery;
 
 $query = new ParseQuery("MyCustomClassName");
 try {
-  $myCustomObject = $query->get("<PARSE_OBJECT_ID>");
+  $myCustomObject = $query->get("z20ydNn5uF");
   // The object was retrieved successfully.
 
   // To get attributes, you can use the "get" method, providing the attribute name:
