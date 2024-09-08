@@ -15,7 +15,7 @@ use Parse\ParseObject;
 ParseClient::initialize( "qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic", "ui9JtZVsSkNqQmHUz1IezQovwz7s2GcdyXIVRMSk", "zNdLgqeDsRPkxmBsAcke5jFAnDYoC6LYV6N8uJrk" );
 ParseClient::setServerURL('https://parseapi.back4app.com/classes/Indonesia_Cities_Database', '/');
 
-$myCustomObject = new ParseObject("_User");
+$myCustomObject = new ParseObject("Indonesia_Cities_Database");
 
 $myCustomObject->set("name", "rishi");
 $myCustomObject->set("dem", 11);
