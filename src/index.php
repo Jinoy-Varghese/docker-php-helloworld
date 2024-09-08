@@ -37,6 +37,20 @@ use Parse\ParseException;
 // use Parse\ParseQuery;
 use Parse\ParseObject;
 
+$app_id = 'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic';
+$master_key = 'zNdLgqeDsRPkxmBsAcke5jFAnDYoC6LYV6N8uJrk';
+
+ParseClient::initialize($app_id, null, $master_key);
+
+//Set server url
+ParseClient::setServerURL('https://parseapi.back4app.com/classes/Indonesia_Cities_Database','parse');
+$health = ParseClient::getServerHealth();
+if($health['status'] === 200) {
+    print('Server connected - everything looks good!');
+}
+else {
+    print('Oops, looks like something is wrong. Please check the server status.');
+}
 $myCustomObject = new ParseObject("Indonesia_Cities_Database");
 
 $myCustomObject->set("asciiname", "jinjin");
