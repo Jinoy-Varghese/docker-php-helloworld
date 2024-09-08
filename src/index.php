@@ -34,17 +34,30 @@ Parse.initialize(
 <?php
 
 use Parse\ParseException;
-use Parse\ParseQuery;
-
+use Parse\ParseObject;
 $query = new ParseQuery("Indonesia_Cities_Database");
-echo $query."heello<br>";
 try {
   $myCustomObject = $query->get("z20ydNn5uF");
   // The object was retrieved successfully.
 
   // To get attributes, you can use the "get" method, providing the attribute name:
-  $myCustomKey1Value = $myCustomObject->get("name");
-  echo $myCustomKey1Value;
+  $asciiname = $myCustomObject->get("asciiname");
+  $longitude = $myCustomObject->get("longitude");
+  $admin1_code = $myCustomObject->get("admin1_code");
+  $name = $myCustomObject->get("name");
+  $population = $myCustomObject->get("population");
+  $geonameid = $myCustomObject->get("geonameid");
+  $feature_class = $myCustomObject->get("feature_class");
+  $timezone = $myCustomObject->get("timezone");
+  $feature_code = $myCustomObject->get("feature_code");
+  $dem = $myCustomObject->get("dem");
+  $modification_date = $myCustomObject->get("modification_date");
+  $alternatenames = $myCustomObject->get("alternatenames");
+  $latitude = $myCustomObject->get("latitude");
+  $country_code = $myCustomObject->get("country_code");
+  $admin3_code = $myCustomObject->get("admin3_code");
+  $cc2 = $myCustomObject->get("cc2");
+  $elevation = $myCustomObject->get("elevation");
 } catch (ParseException $ex) {
   // The object was not retrieved successfully.
   // error is a ParseException with an error code and message.
