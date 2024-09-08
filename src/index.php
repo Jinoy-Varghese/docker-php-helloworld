@@ -52,6 +52,7 @@ if($health['status'] === 200) {
 }
 else {
     print('Oops, looks like something is wrong. Please check the server status.');
+    echo $health['status'];
 }
 $myCustomObject = new ParseObject("Indonesia_Cities_Database");
 
