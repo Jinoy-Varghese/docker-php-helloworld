@@ -77,7 +77,7 @@ addCustomClassName();
 <?php
 
 use Parse\ParseException;
-// use Parse\ParseQuery;
+use Parse\ParseQuery;
 use Parse\ParseObject;
 use Parse\ParseClient;
 
