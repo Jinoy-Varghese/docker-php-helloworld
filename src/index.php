@@ -17,8 +17,12 @@
     </body>
     <script>
       // Initialize Parse
-      Parse.initialize("qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic", "NDunEJ6qyg1AZ104lDqbC4969ItHhjXYoYXIwC1D"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
-      Parse.serverURL = "https://parseapi.back4app.com/";
+      Parse.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL
+// Remember to inform BOTH the Back4App Application ID AND the JavaScript KEY
+      Parse.initialize(
+        'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic', // This is your Application ID
+        'NDunEJ6qyg1AZ104lDqbC4969ItHhjXYoYXIwC1D' // This is your Javascript key
+      );
   
       // Create a new User
       async function createParseUser() {
