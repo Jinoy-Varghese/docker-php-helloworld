@@ -13,7 +13,7 @@ use Parse\ParseObject;
 
 // Initializes with the <APPLICATION_ID>, <REST_KEY>, and <MASTER_KEY>
 ParseClient::initialize( "qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic", "ui9JtZVsSkNqQmHUz1IezQovwz7s2GcdyXIVRMSk", "zNdLgqeDsRPkxmBsAcke5jFAnDYoC6LYV6N8uJrk" );
-ParseClient::setServerURL('https://parseapi.back4app.com/classes/testdb', '/');
+ParseClient::setServerURL('https://parseapi.back4app.com', '/');
 
 $myCustomObject = new ParseObject("testdb");
 
