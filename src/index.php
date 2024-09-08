@@ -8,19 +8,18 @@ for($i=1;$i<=5;$i++)
 require 'vendor/autoload.php';
 
 use Parse\ParseClient;
-
-// Initializes with the <APPLICATION_ID>, <REST_KEY>, and <MASTER_KEY>
-ParseClient::initialize( "qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic", "ui9JtZVsSkNqQmHUz1IezQovwz7s2GcdyXIVRMSk", "zNdLgqeDsRPkxmBsAcke5jFAnDYoC6LYV6N8uJrk" );
-ParseClient::setServerURL('https://parseapi.back4app.com', '/');
-
 use Parse\ParseException;
 use Parse\ParseObject;
 
+// Initializes with the <APPLICATION_ID>, <REST_KEY>, and <MASTER_KEY>
+ParseClient::initialize( "qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic", "ui9JtZVsSkNqQmHUz1IezQovwz7s2GcdyXIVRMSk", "zNdLgqeDsRPkxmBsAcke5jFAnDYoC6LYV6N8uJrk" );
+ParseClient::setServerURL('https://parseapi.back4app.com/classes/Indonesia_Cities_Database', '/');
+
 $myCustomObject = new ParseObject("_User");
 
-$myCustomObject->set("username", "rishi");
-$myCustomObject->set("email", "Some2@value.com");
-$myCustomObject->set("password", "My custom value");
+$myCustomObject->set("name", "rishi");
+$myCustomObject->set("dem", 11);
+$myCustomObject->set("population", 2222);
 
 try {
   $myCustomObject->save();
