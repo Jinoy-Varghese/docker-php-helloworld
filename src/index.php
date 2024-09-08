@@ -13,13 +13,13 @@ use Parse\ParseObject;
 
 // Initializes with the <APPLICATION_ID>, <REST_KEY>, and <MASTER_KEY>
 ParseClient::initialize( "qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic", "ui9JtZVsSkNqQmHUz1IezQovwz7s2GcdyXIVRMSk", "zNdLgqeDsRPkxmBsAcke5jFAnDYoC6LYV6N8uJrk" );
-ParseClient::setServerURL('https://parseapi.back4app.com/classes/Indonesia_Cities_Database', '/');
+ParseClient::setServerURL('https://parseapi.back4app.com/classes/testdb', '/');
 
-$myCustomObject = new ParseObject("Indonesia_Cities_Database");
+$myCustomObject = new ParseObject("testdb");
 
 $myCustomObject->set("name", "rishi");
-$myCustomObject->set("dem", 11);
-$myCustomObject->set("population", 2222);
+$myCustomObject->set("id", 11);
+$myCustomObject->set("nick", "ubcbcs");
 
 try {
   $myCustomObject->save();
