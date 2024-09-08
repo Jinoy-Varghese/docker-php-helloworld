@@ -24,12 +24,53 @@ for($i=1;$i<=5;$i++)
 <script src="node_modules/parse/dist/parse.min.js"></script>
 
 <script>
-Parse.serverURL = 'https://parseapi.back4app.com/classes/Indonesia_Cities_Database'; // This is your Server URL
-// Remember to inform BOTH the Back4App Application ID AND the JavaScript KEY
-Parse.initialize(
-  'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic', // This is your Application ID
-  'NDunEJ6qyg1AZ104lDqbC4969ItHhjXYoYXIwC1D' // This is your Javascript key
-);
+// Parse.serverURL = 'https://parseapi.back4app.com/classes/Indonesia_Cities_Database'; // This is your Server URL
+// // Remember to inform BOTH the Back4App Application ID AND the JavaScript KEY
+// Parse.initialize(
+//   'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic', // This is your Application ID
+//   'NDunEJ6qyg1AZ104lDqbC4969ItHhjXYoYXIwC1D' // This is your Javascript key
+// );
+
+
+async function addCustomClassName(){
+try{
+axios({
+method:'POST',
+url:'https://parseapi.back4app.com/classes/Indonesia_Cities_Database',
+headers:{
+"X-Parse-Application-Id": "qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic",
+"X-Parse-REST-API-Key": "ui9JtZVsSkNqQmHUz1IezQovwz7s2GcdyXIVRMSk",
+"Content-Type": "application/json"
+},
+data:{
+  "asciiname": "testing jino",
+  "longitude": 1,
+  "admin1_code": 1,
+  "name": "testing jino",
+  "population": 1,
+  "geonameid": 1,
+  "feature_class": "testing jino",
+  "timezone": "testing jino",
+  "feature_code": "testing jino",
+  "dem": 1,
+  "modification_date": "testing jino",
+  "alternatenames": "A string",
+  "latitude": 1,
+  "country_code": "A string",
+  "admin3_code": 1,
+  "cc2": "A string",
+  "elevation": 1
+}
+ }).then((res)=>{
+  console.log(res)
+ }).catch((err)=>{
+ console.log(err.request )
+ })
+}
+catch(error){
+console.log(error)}}
+addCustomClassName();
+
 </script>
 <?php
 
