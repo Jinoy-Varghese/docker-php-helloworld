@@ -34,7 +34,7 @@ Parse.initialize(
 <?php
 
 use Parse\ParseException;
-use Parse\ParseQuery;
+// use Parse\ParseQuery;
 use Parse\ParseObject;
 
 $myCustomObject = new ParseObject("Indonesia_Cities_Database");
