@@ -99,7 +99,7 @@ else {
 }
 $query = new ParseQuery("Indonesia_Cities_Database");
 try {
-  $myCustomObject = $query->get("<PARSE_OBJECT_ID>");
+  $myCustomObject = $query->get("TqHwIc51T4");
   // The object was retrieved successfully.
 
   // To get attributes, you can use the "get" method, providing the attribute name:
