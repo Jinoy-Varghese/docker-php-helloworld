@@ -36,6 +36,7 @@ Parse.initialize(
 use Parse\ParseException;
 // use Parse\ParseQuery;
 use Parse\ParseObject;
+use Parse\ParseClient;
 
 $app_id = 'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic';
 $master_key = 'zNdLgqeDsRPkxmBsAcke5jFAnDYoC6LYV6N8uJrk';
