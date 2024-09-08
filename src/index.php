@@ -39,9 +39,10 @@ use Parse\ParseObject;
 use Parse\ParseClient;
 
 $app_id = 'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic';
-$master_key = 'ui9JtZVsSkNqQmHUz1IezQovwz7s2GcdyXIVRMSk';
+$RestAPIKey = 'ui9JtZVsSkNqQmHUz1IezQovwz7s2GcdyXIVRMSk';
+$master_key = 'zNdLgqeDsRPkxmBsAcke5jFAnDYoC6LYV6N8uJrk';
 
-ParseClient::initialize($app_id, null, $master_key);
+ParseClient::initialize($app_id, $RestAPIKey, $master_key);
 
 //Set server url
 ParseClient::setServerURL('https://parseapi.back4app.com/classes/Indonesia_Cities_Database','parse');
