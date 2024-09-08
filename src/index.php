@@ -76,9 +76,30 @@ addCustomClassName();
 </script>
 <?php
 
+use Parse\ParseException;
+// use Parse\ParseQuery;
+use Parse\ParseObject;
+use Parse\ParseClient;
+
+$app_id = 'qyAZuVFBpeAH6QGkz1IT5gK3eP5IZaphaFtZJMic';
+$RestAPIKey = 'ui9JtZVsSkNqQmHUz1IezQovwz7s2GcdyXIVRMSk';
+$master_key = 'zNdLgqeDsRPkxmBsAcke5jFAnDYoC6LYV6N8uJrk';
+
+ParseClient::initialize($app_id, $RestAPIKey, $master_key);
+
+//Set server url
+ParseClient::setServerURL('https://parseapi.back4app.com/classes/Indonesia_Cities_Database','/');
+$health = ParseClient::getServerHealth();
+if($health['status'] === 200) {
+    print('Server connected - everything looks good!');
+}
+else {
+    print('Oops, looks like something is wrong. Please check the server status.');
+    echo $health['status'];
+}
 $myCustomObject = new ParseObject("Indonesia_Cities_Database");
 
-$myCustomObject->set("asciiname", "A string");
+$myCustomObject->set("asciiname", "jinjin");
 $myCustomObject->set("longitude", 1);
 $myCustomObject->set("admin1_code", 1);
 $myCustomObject->set("name", "A string");
