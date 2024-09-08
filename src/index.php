@@ -5,7 +5,7 @@ for($i=1;$i<=5;$i++)
 {
   echo $i."<br>";
 }
-
+require 'vendor/autoload.php';
 
 use Parse\ParseClient;
 
