@@ -36,13 +36,13 @@ Parse.initialize(
 use Parse\ParseException;
 use Parse\ParseQuery;
 
-$query = new ParseQuery("MyCustomClassName");
+$query = new ParseQuery("z20ydNn5uF");
 try {
   $myCustomObject = $query->get("z20ydNn5uF");
   // The object was retrieved successfully.
 
   // To get attributes, you can use the "get" method, providing the attribute name:
-  $myCustomKey1Value = $myCustomObject->get("myCustomKey1Name");
+  $myCustomKey1Value = $myCustomObject->get("name");
   echo $myCustomKey1Value;
 } catch (ParseException $ex) {
   // The object was not retrieved successfully.
