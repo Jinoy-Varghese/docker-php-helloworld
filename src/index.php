@@ -36,7 +36,7 @@ Parse.initialize(
 use Parse\ParseException;
 use Parse\ParseQuery;
 
-$query = new ParseQuery("z20ydNn5uF");
+$query = new ParseQuery("Indonesia_Cities_Database");
 try {
   $myCustomObject = $query->get("z20ydNn5uF");
   // The object was retrieved successfully.
